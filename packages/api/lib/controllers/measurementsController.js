@@ -25,16 +25,16 @@ const
 const getLatestMeasurements = async function getLatestMeasurements (req, res, next) {
   const { boxId, sensorId, onlyValue } = req._userParams;
   try {
-    const box = await Box.findBoxById(boxId, { onlyLastMeasurements: true })
+    const box = await Box.findBoxById(boxId, { onlyLastMeasurements: true });
 
     //if sensorId in parameters return only sensor, else whole box
-    if(sensorId){
+    if (sensorId) {
       let sensor = box.sensors.filter(res => {
-        if (res._id == sensorId) return true;
+        if (res._id.toString() === sensorId) {return true;}
       })[0];
-      
+
       // return only the value if flag is set to true
-      if(onlyValue){
+      if (onlyValue) {
         sensor = sensor.lastMeasurement.value;
       }
 
@@ -194,7 +194,7 @@ const getDataMulti = async function getDataMulti (req, res, next) {
  * @apiGroup Measurements
  * @apiName postNewMeasurement
  * @apiUse BoxIdParam
- * @apiUse SensorIdParam 
+ * @apiUse SensorIdParam
  * @apiUse LocationBody
  * @apiUse ContentTypeJSON
  * @apiParam (RequestBody) {String} value the measured value of the sensor. Also accepts JSON float numbers.
