@@ -20,7 +20,7 @@ const
  * @apiName getLatestMeasurements
  * @apiUse BoxIdParam
  * @apiParam {String} [sensorId] The sensorId of the sensor you want to retrieve
- * @apiParam {Boolean="true","false"} [onlyValue] If set to true only returns the measured value without information about the sensor
+ * @apiParam {Boolean="true","false"} [onlyValue] If set to true only returns the measured value without information about the sensor. Requires a sensorId.
  */
 const getLatestMeasurements = async function getLatestMeasurements (req, res, next) {
   const { boxId, sensorId, onlyValue } = req._userParams;
