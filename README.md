@@ -78,6 +78,8 @@ Every commit on branch `development` will be built with the tag `development`.
 - Run `yarn tag-container`
 - Run `git push origin master`
 
+trigger docker hub
+
 ## License
 
 [MIT](license.md) - Matthias Pfeil 2015 - now
