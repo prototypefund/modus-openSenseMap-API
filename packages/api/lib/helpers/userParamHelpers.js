@@ -5,7 +5,7 @@ const { BadRequestError, UnprocessableEntityError, InvalidArgumentError, Forbidd
   moment = require('moment'),
   isemail = require('isemail'),
   handleModelError = require('./errorHandler'),
-  area = require('@turf/area').default,
+  area = require('@turf/area'),
   config = require('config');
 
 const decodeBase64Image = function (dataString) {

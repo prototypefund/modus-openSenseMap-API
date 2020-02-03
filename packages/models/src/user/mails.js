@@ -111,11 +111,12 @@ if (config.get('mailer.url')) {
   };
 
   const requestMailer = (payload) => {
-    return got.post(config.get('mailer.url'), {
+    return got(config.get('mailer.url'), {
       cert: config.get('cert'),
       key: config.get('key'),
       ca: config.get('ca_cert'),
-      json: payload,
+      json: true,
+      body: payload,
       ecdhCurve: 'auto'
     })
       .then((response) => {
@@ -156,3 +157,4 @@ if (config.get('mailer.url')) {
     }
   };
 }
+
