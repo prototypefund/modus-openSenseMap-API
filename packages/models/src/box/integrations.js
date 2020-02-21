@@ -18,7 +18,7 @@ const ttnSchema = new mongoose.Schema({
   dev_id: { type: String, trim: true, required: true },
   app_id: { type: String, trim: true, required: true },
   port: { type: Number, min: 0 },
-  profile: { type: String, trim: true, enum: ['json', 'debug', 'sensebox/home', 'lora-serialization'], required: true },
+  profile: { type: String, trim: true, enum: ['json', 'debug', 'sensebox/home', 'lora-serialization', 'sensebox/custom'], required: true },
   decodeOptions: [{}]
 }, { _id: false, usePushEach: true });
 
